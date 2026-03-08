@@ -1,0 +1,11 @@
+[
+  {"id": "CVE-2024-1234", "summary": "Critical RCE in web server", "cvss": 9.8},
+  {"id": "CVE-2024-2345", "summary": "SQL Injection vulnerability", "cvss": 8.5},
+  {"id": "CVE-2024-3456", "summary": "XSS in admin panel", "cvss": 6.1},
+  {"id": "CVE-2024-4567", "summary": "Path traversal in file upload", "cvss": 7.2},
+  {"id": "CVE-2024-5678", "summary": "Authentication bypass", "cvss": 9.1},
+  {"id": "CVE-2024-6789", "summary": "DoS in network stack", "cvss": 5.5},
+  {"id": "CVE-2024-7890", "summary": "Information disclosure", "cvss": 4.3},
+  {"id": "CVE-2024-8901", "summary": "Remote code execution", "cvss": 8.8},
+  {"id": "CVE-2024-9012", "summary": "Privilege escalation", "cvss": 7.5}
+]
