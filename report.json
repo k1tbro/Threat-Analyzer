@@ -1,0 +1,120 @@
+{
+  "timestamp": "2026-03-08T13:36:48.334703",
+  "sources": [
+    "suricata_logs",
+    "auth_logs",
+    "cve_api"
+  ],
+  "suricata_analysis": {
+    "total_alerts": 7,
+    "suspicious_ips": {
+      "203.0.113.50": 16,
+      "45.33.32.156": 13,
+      "192.168.1.105": 12,
+      "185.220.101.42": 9
+    },
+    "dns_queries": {
+      "suspicious-malware-site.com": 3
+    },
+    "high_severity_alerts": 3,
+    "top_threat_ips": [
+      "203.0.113.50",
+      "45.33.32.156",
+      "192.168.1.105",
+      "185.220.101.42"
+    ],
+    "frequent_dns": [
+      "suspicious-malware-site.com"
+    ]
+  },
+  "cve_analysis": {
+    "cve_count": 9,
+    "high_cvss_count": 6,
+    "top_cve": [
+      {
+        "id": "CVE-2024-1234",
+        "summary": "Critical RCE in web server",
+        "cvss": 9.8
+      },
+      {
+        "id": "CVE-2024-2345",
+        "summary": "SQL Injection vulnerability",
+        "cvss": 8.5
+      },
+      {
+        "id": "CVE-2024-3456",
+        "summary": "XSS in admin panel",
+        "cvss": 6.1
+      },
+      {
+        "id": "CVE-2024-4567",
+        "summary": "Path traversal in file upload",
+        "cvss": 7.2
+      },
+      {
+        "id": "CVE-2024-5678",
+        "summary": "Authentication bypass",
+        "cvss": 9.1
+      }
+    ]
+  },
+  "threat_responses": [
+    {
+      "type": "block_ip",
+      "ip": "203.0.113.50",
+      "action": "simulated_block",
+      "message": "[УГРОЗА] Обнаружен подозрительный IP: 203.0.113.50. Имитация блокировки: iptables -A INPUT -s 203.0.113.50 -j DROP"
+    },
+    {
+      "type": "block_ip",
+      "ip": "45.33.32.156",
+      "action": "simulated_block",
+      "message": "[УГРОЗА] Обнаружен подозрительный IP: 45.33.32.156. Имитация блокировки: iptables -A INPUT -s 45.33.32.156 -j DROP"
+    },
+    {
+      "type": "block_ip",
+      "ip": "192.168.1.105",
+      "action": "simulated_block",
+      "message": "[УГРОЗА] Обнаружен подозрительный IP: 192.168.1.105. Имитация блокировки: iptables -A INPUT -s 192.168.1.105 -j DROP"
+    },
+    {
+      "type": "dns_alert",
+      "domain": "suspicious-malware-site.com",
+      "action": "notification",
+      "message": "[УГРОЗА] Частые DNS-запросы к подозрительному домену: suspicious-malware-site.com. Рекомендуется добавить в blacklist."
+    },
+    {
+      "type": "cve_alert",
+      "cve_id": "CVE-2024-1234",
+      "cvss": 9.8,
+      "action": "notification",
+      "message": "[УГРОЗА] Критическая уязвимость CVE-2024-1234 (CVSS: 9.8). Требуется обновление!"
+    },
+    {
+      "type": "cve_alert",
+      "cve_id": "CVE-2024-2345",
+      "cvss": 8.5,
+      "action": "notification",
+      "message": "[УГРОЗА] Критическая уязвимость CVE-2024-2345 (CVSS: 8.5). Требуется обновление!"
+    },
+    {
+      "type": "cve_alert",
+      "cve_id": "CVE-2024-4567",
+      "cvss": 7.2,
+      "action": "notification",
+      "message": "[УГРОЗА] Критическая уязвимость CVE-2024-4567 (CVSS: 7.2). Требуется обновление!"
+    },
+    {
+      "type": "cve_alert",
+      "cve_id": "CVE-2024-5678",
+      "cvss": 9.1,
+      "action": "notification",
+      "message": "[УГРОЗА] Критическая уязвимость CVE-2024-5678 (CVSS: 9.1). Требуется обновление!"
+    }
+  ],
+  "summary": {
+    "total_threats_detected": 8,
+    "suspicious_ips_count": 4,
+    "critical_vulnerabilities": 6
+  }
+}
